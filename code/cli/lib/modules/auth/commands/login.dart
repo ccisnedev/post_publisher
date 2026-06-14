@@ -124,7 +124,6 @@ class AuthLoginCommand implements Command<AuthLoginInput, AuthLoginOutput> {
       final token = await _api.exchangeAuthorizationCode(
         config: config,
         code: response.code!,
-        codeVerifier: request.codeVerifier,
       );
 
       final profile = await _api.fetchProfile(token.accessToken);
