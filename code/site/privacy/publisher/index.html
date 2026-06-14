@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post Publisher Privacy Policy</title>
+  <meta name="description" content="Privacy policy for the Post Publisher LinkedIn application.">
+  <meta name="theme-color" content="#b5472f">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <div class="shell">
+    <div class="topbar">
+      <div class="brandline">
+        <span class="brandmark"></span>
+        <span>Post Publisher</span>
+      </div>
+      <nav class="topnav">
+        <a href="/">Home</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+
+    <section class="panel hero-copy">
+      <div class="eyebrow">Privacy Policy</div>
+      <h1>Privacy policy for Post Publisher</h1>
+      <p class="lede">
+        Effective date: 2026-06-04. This policy explains what Post Publisher processes,
+        how it is used, and what is intentionally not done with that data.
+      </p>
+    </section>
+
+    <section class="panel section">
+      <h2>What Post Publisher does</h2>
+      <p>
+        Post Publisher is a command-line application that authenticates a user with LinkedIn and,
+        after an explicit action from that user, publishes posts on that user’s behalf.
+      </p>
+    </section>
+
+    <section class="grid">
+      <article class="panel card">
+        <h3>Data processed</h3>
+        <ul class="bullet-list">
+          <li>OAuth credentials and access tokens returned by LinkedIn</li>
+          <li>Basic profile identity data returned by LinkedIn, such as member identifier and display name</li>
+          <li>Email address if LinkedIn includes it in the authorized response</li>
+          <li>Post content explicitly provided by the user, including text, image files, and PDF files</li>
+        </ul>
+      </article>
+      <article class="panel card">
+        <h3>How data is used</h3>
+        <ul class="bullet-list">
+          <li>To authenticate the user with LinkedIn</li>
+          <li>To identify the member account used for posting</li>
+          <li>To create the LinkedIn post explicitly requested by the user</li>
+          <li>To store local CLI configuration needed for future runs</li>
+        </ul>
+      </article>
+      <article class="panel card">
+        <h3>What is not done</h3>
+        <ul class="bullet-list">
+          <li>No sale of personal data</li>
+          <li>No background posting without an explicit user command</li>
+          <li>No sharing of LinkedIn account data with unrelated third parties</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="panel section section--accent">
+      <h2>Local storage</h2>
+      <p>
+        The CLI stores configuration and session data on the user’s local machine. That may include
+        access tokens, resolved member identity, selected API version, and local project defaults.
+        The storage exists to make the command-line workflow usable between runs.
+      </p>
+    </section>
+
+    <section class="panel section">
+      <h2>User control</h2>
+      <p>
+        The user controls when authentication happens, when content is submitted, and when local
+        session state is removed. The CLI includes logout and local configuration commands for that purpose.
+      </p>
+    </section>
+
+    <section class="panel section">
+      <h2>Contact</h2>
+      <p>
+        For questions about this policy or the application, use the public contact page at
+        <a href="/contact/">/contact/</a>.
+      </p>
+    </section>
+
+    <footer class="footer">
+      <span><a href="/">Home</a></span>
+      <span><a href="/contact/">Contact</a></span>
+    </footer>
+  </div>
+</body>
+</html>
