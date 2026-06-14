@@ -56,7 +56,6 @@ void main() {
         requestBuilder: (_) => OAuthRequest(
           authorizationUri: Uri.parse('https://www.linkedin.com/oauth/v2/authorization'),
           state: 'expected-state',
-          codeVerifier: 'test-code-verifier',
         ),
       ).execute();
 
@@ -110,7 +109,6 @@ void main() {
         requestBuilder: (_) => OAuthRequest(
           authorizationUri: Uri.parse('https://www.linkedin.com/oauth/v2/authorization'),
           state: 'expected-state',
-          codeVerifier: 'test-code-verifier',
         ),
       ).execute();
 
@@ -119,7 +117,6 @@ void main() {
       expect(output.success, isTrue);
       expect(output.message, contains('Test Member'));
       expect(api.receivedCode, 'auth-code');
-      expect(api.receivedCodeVerifier, 'test-code-verifier');
       expect(savedConfig.token?.accessToken, 'access-token');
       expect(savedConfig.profile?.personUrn, 'urn:li:person:member-id');
     } finally {
@@ -132,7 +129,6 @@ class _FakeLinkedInApiClient extends LinkedInApiClient {
   final LinkedInToken? token;
   final LinkedInProfile? profile;
   String? receivedCode;
-  String? receivedCodeVerifier;
 
   _FakeLinkedInApiClient({this.token, this.profile});
 
@@ -140,10 +136,8 @@ class _FakeLinkedInApiClient extends LinkedInApiClient {
   Future<LinkedInToken> exchangeAuthorizationCode({
     required UserConfig config,
     required String code,
-    required String codeVerifier,
   }) async {
     receivedCode = code;
-    receivedCodeVerifier = codeVerifier;
     return token ??
         LinkedInToken(
           accessToken: 'default-access-token',

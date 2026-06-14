@@ -38,7 +38,6 @@ class LinkedInApiClient {
   Future<LinkedInToken> exchangeAuthorizationCode({
     required UserConfig config,
     required String code,
-    required String codeVerifier,
   }) async {
     final response = await _postForm(
       uri: _authUri('/oauth/v2/accessToken'),
@@ -48,7 +47,6 @@ class LinkedInApiClient {
         'client_id': config.clientId ?? '',
         'client_secret': config.clientSecret ?? '',
         'redirect_uri': config.redirectUri ?? '',
-        'code_verifier': codeVerifier,
       },
     );
 
