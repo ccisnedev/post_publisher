@@ -12,6 +12,10 @@ on:
 permissions:
   contents: write
 
+# Run all JavaScript actions on Node.js 24 (opt in ahead of the GitHub default).
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   prepare:
     runs-on: ubuntu-latest
