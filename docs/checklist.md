@@ -135,10 +135,10 @@ que el sitio quede inaccesible mientras propaga.
 ## Paso 9. Probar publicacion con imagen
 
 - [ ] Ejecutar .\scripts\smoke-posts.ps1 -DryRun para revisar argumentos y archivos temporales
-- [ ] Ejecutar dart run bin/main.dart post image --file <ruta_png> --message "Hello, LinkedIn!" --alt-text "Hello, LinkedIn! test image"
-- [ ] Confirmar que el upload del asset termina bien
-- [ ] Confirmar que LinkedIn crea el post final
-- [ ] Verificar visualmente en LinkedIn que la imagen se muestra correctamente
+- [x] Ejecutar dart run bin/main.dart post image --file <ruta_png> --message "Hello, LinkedIn!" --alt-text "Hello, LinkedIn! test image"
+- [x] Confirmar que el upload del asset termina bien
+- [x] Confirmar que LinkedIn crea el post final (urn:li:share:7471810859103653888)
+- [x] Verificar visualmente en LinkedIn que la imagen se muestra correctamente
 
 ## Paso 10. Probar publicacion con documento
 
