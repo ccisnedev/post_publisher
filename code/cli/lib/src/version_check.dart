@@ -24,7 +24,7 @@ Future<VersionCheckResult> checkLatestVersion({
       Uri.parse('https://api.github.com/repos/$repo/releases/latest'),
     );
     request.headers.set('Accept', 'application/vnd.github+json');
-    request.headers.set('User-Agent', 'linkedin-cli/$currentVersion');
+    request.headers.set('User-Agent', 'post-publisher/$currentVersion');
 
     final response = await request.close();
     if (response.statusCode != 200) {

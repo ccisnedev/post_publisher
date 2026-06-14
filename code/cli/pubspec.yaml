@@ -1,7 +1,7 @@
 name: post_publisher
 description: >
   Open-source CLI for authenticating with LinkedIn and publishing posts from the command line.
-version: 0.1.0
+version: 0.2.0
 
 environment:
   sdk: ^3.11.0

@@ -16,14 +16,15 @@ if (Test-Path $installDir) {
 
 Write-Host ">>> Installing to $installDir..."
 New-Item -ItemType Directory -Force -Path $binDir | Out-Null
-Copy-Item (Join-Path $buildDir 'bin' 'linkedin.exe') (Join-Path $binDir 'linkedin.exe')
+Copy-Item (Join-Path $buildDir 'bin' 'post-publisher.exe') (Join-Path $binDir 'post-publisher.exe')
 
 if (Test-Path (Join-Path $buildDir 'assets')) {
     Copy-Item -Recurse (Join-Path $buildDir 'assets') (Join-Path $installDir 'assets')
 }
 
-Write-Host '>>> Creating linkedin alias...'
-Set-Content -Path (Join-Path $binDir 'linkedin.cmd') -Value '@"%~dp0linkedin.exe" %*' -Encoding ASCII
+Write-Host '>>> Creating command aliases (post-publisher, pp)...'
+Set-Content -Path (Join-Path $binDir 'post-publisher.cmd') -Value '@"%~dp0post-publisher.exe" %*' -Encoding ASCII
+Set-Content -Path (Join-Path $binDir 'pp.cmd') -Value '@"%~dp0post-publisher.exe" %*' -Encoding ASCII
 
 $userPath = [System.Environment]::GetEnvironmentVariable('PATH', 'User')
 
@@ -44,7 +45,7 @@ if (($env:PATH -split ';') -notcontains $binDir) {
 }
 
 Write-Host '>>> Verifying...'
-& (Join-Path $binDir 'linkedin.exe') version
+& (Join-Path $binDir 'post-publisher.exe') version
 
 Write-Host ''
 Write-Host '>>> Installed from source successfully!'

@@ -71,7 +71,7 @@ class TuiCommand implements Command<TuiInput, TuiOutput> {
       if (result.updateAvailable && result.latestVersion != null) {
         text = '$text\n\nUpdate available: '
             '$linkedinCliVersion -> ${result.latestVersion} '
-            "(run 'linkedin upgrade')";
+            "(run 'post-publisher upgrade')";
       }
     } catch (_) {
       // Silent.
@@ -86,14 +86,14 @@ String _buildBanner({
   required String configured,
   required String auth,
 }) {
-  return 'LinkedIn CLI v$version\n'
+  return 'Post Publisher v$version\n'
       'Open-source posting workflow for personal accounts and organizations.\n\n'
       'Status\n'
       '  Config: $configured\n'
       '  Auth:   $auth\n\n'
       'Quick start\n'
-      '  1. linkedin auth configure\n'
-      '  2. linkedin auth login\n'
-      '  3. linkedin post text --message "Hello from the CLI"\n\n'
-      'Run: linkedin help';
+      '  1. post-publisher auth configure\n'
+      '  2. post-publisher auth login\n'
+      '  3. post-publisher post text --message "Hello from the CLI"\n\n'
+      'Run: post-publisher help  (alias: pp)';
 }

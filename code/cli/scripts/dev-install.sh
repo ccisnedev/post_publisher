@@ -13,8 +13,9 @@ echo '>>> Building from source...'
 rm -rf "$install_dir"
 mkdir -p "$bin_dir"
 
-cp "$build_dir/bin/linkedin" "$bin_dir/linkedin"
-chmod +x "$bin_dir/linkedin"
+cp "$build_dir/bin/post-publisher" "$bin_dir/post-publisher"
+chmod +x "$bin_dir/post-publisher"
+ln -sf post-publisher "$bin_dir/pp"
 
 if [[ -d "$build_dir/assets" ]]; then
   cp -R "$build_dir/assets" "$install_dir/assets"

@@ -132,13 +132,13 @@ class PostDocumentCommand
     if (token == null) {
       return PostDocumentOutput(
         success: false,
-        message: "No LinkedIn token found. Run 'linkedin auth login' first.",
+        message: "No LinkedIn token found. Run 'post-publisher auth login' first.",
       );
     }
     if (token.isExpired) {
       return PostDocumentOutput(
         success: false,
-        message: "The cached LinkedIn token is expired. Run 'linkedin auth login' again.",
+        message: "The cached LinkedIn token is expired. Run 'post-publisher auth login' again.",
       );
     }
 

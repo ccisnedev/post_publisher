@@ -5,12 +5,12 @@ $installDir = Join-Path $env:LOCALAPPDATA 'post_publisher'
 $binDir = Join-Path $installDir 'bin'
 
 if ($env:OS -ne 'Windows_NT') {
-    Write-Error 'LinkedIn CLI currently supports Windows only in install.ps1.'
+    Write-Error 'Post Publisher currently supports Windows only in install.ps1.'
     exit 1
 }
 
 if ([System.Environment]::Is64BitOperatingSystem -eq $false) {
-    Write-Error 'LinkedIn CLI requires a 64-bit operating system.'
+    Write-Error 'Post Publisher requires a 64-bit operating system.'
     exit 1
 }
 
@@ -23,14 +23,14 @@ if ($env:GITHUB_TOKEN) {
 }
 
 $release = Invoke-RestMethod -Uri $releaseUrl -Headers $headers
-$asset = $release.assets | Where-Object { $_.name -like 'linkedin-windows-x64*.zip' } | Select-Object -First 1
+$asset = $release.assets | Where-Object { $_.name -like 'post-publisher-windows-x64*.zip' } | Select-Object -First 1
 
 if (-not $asset) {
-    Write-Error "No linkedin-windows-x64 asset found in release $($release.tag_name)."
+    Write-Error "No post-publisher-windows-x64 asset found in release $($release.tag_name)."
     exit 1
 }
 
-$tempZip = Join-Path $env:TEMP "linkedin-$($release.tag_name).zip"
+$tempZip = Join-Path $env:TEMP "post-publisher-$($release.tag_name).zip"
 
 Write-Host '>>> Downloading...'
 Invoke-WebRequest -Uri $asset.browser_download_url -OutFile $tempZip -Headers $headers
@@ -44,8 +44,9 @@ Write-Host '>>> Extracting...'
 Expand-Archive -Path $tempZip -DestinationPath $installDir -Force
 Remove-Item $tempZip
 
-Write-Host '>>> Creating linkedin alias...'
-Set-Content -Path (Join-Path $binDir 'linkedin.cmd') -Value '@"%~dp0linkedin.exe" %*' -Encoding ASCII
+Write-Host '>>> Creating command aliases (post-publisher, pp)...'
+Set-Content -Path (Join-Path $binDir 'post-publisher.cmd') -Value '@"%~dp0post-publisher.exe" %*' -Encoding ASCII
+Set-Content -Path (Join-Path $binDir 'pp.cmd') -Value '@"%~dp0post-publisher.exe" %*' -Encoding ASCII
 
 $userPath = [System.Environment]::GetEnvironmentVariable('PATH', 'User')
 if ($userPath -notlike "*$binDir*") {
@@ -54,8 +55,9 @@ if ($userPath -notlike "*$binDir*") {
 }
 
 Write-Host '>>> Verifying installation...'
-& (Join-Path $binDir 'linkedin.exe') version
+& (Join-Path $binDir 'post-publisher.exe') version
 
 Write-Host ''
-Write-Host '>>> LinkedIn CLI installed successfully!'
+Write-Host '>>> Post Publisher installed successfully!'
+Write-Host '    Commands: post-publisher (alias: pp)'
 Write-Host "    Location: $installDir"

@@ -12,7 +12,7 @@ void buildGlobalModule(ModuleBuilder m) {
   m.command<TuiInput, TuiOutput>(
     '',
     (req) => TuiCommand(TuiInput.fromCliRequest(req)),
-    description: 'Display LinkedIn CLI status and quick-start help',
+    description: 'Display Post Publisher status and quick-start help',
   );
 
   m.command<HelpInput, HelpOutput>(
@@ -24,7 +24,7 @@ void buildGlobalModule(ModuleBuilder m) {
   m.command<InitInput, InitOutput>(
     'init',
     (req) => InitCommand(InitInput.fromCliRequest(req)),
-    description: 'Initialize project-level LinkedIn CLI defaults',
+    description: 'Initialize project-level Post Publisher defaults',
   );
 
   m.command<VersionInput, VersionOutput>(
@@ -42,12 +42,12 @@ void buildGlobalModule(ModuleBuilder m) {
   m.command<UpgradeInput, UpgradeOutput>(
     'upgrade',
     (req) => UpgradeCommand(UpgradeInput.fromCliRequest(req)),
-    description: 'Download and install the latest LinkedIn CLI release',
+    description: 'Download and install the latest Post Publisher release',
   );
 
   m.command<UninstallInput, UninstallOutput>(
     'uninstall',
     (req) => UninstallCommand(UninstallInput.fromCliRequest(req)),
-    description: 'Remove LinkedIn CLI from the system',
+    description: 'Remove Post Publisher from the system',
   );
 }

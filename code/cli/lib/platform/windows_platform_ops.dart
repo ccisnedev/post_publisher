@@ -8,10 +8,10 @@ import 'platform_ops.dart';
 
 class WindowsPlatformOps implements PlatformOps {
   @override
-  String get binaryName => 'linkedin.exe';
+  String get binaryName => 'post-publisher.exe';
 
   @override
-  String get assetName => 'linkedin-windows-x64.zip';
+  String get assetName => 'post-publisher-windows-x64.zip';
 
   @override
   Future<void> expandArchive(String archivePath, String destDir) async {
@@ -82,7 +82,7 @@ class WindowsPlatformOps implements PlatformOps {
 
   @override
   Future<void> scheduleDeletion(String dir) async {
-    final bat = File(p.join(Directory.systemTemp.path, 'linkedin_cleanup.cmd'));
+    final bat = File(p.join(Directory.systemTemp.path, 'post-publisher_cleanup.cmd'));
     bat.writeAsStringSync(
       '@echo off\r\n'
       'timeout /t 2 /nobreak >nul\r\n'

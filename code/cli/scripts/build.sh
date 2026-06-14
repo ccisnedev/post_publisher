@@ -8,10 +8,10 @@ build_dir="$cli_root/build"
 rm -rf "$build_dir"
 mkdir -p "$build_dir/bin"
 
-echo '>>> Compiling linkedin...'
+echo '>>> Compiling post-publisher...'
 (
   cd "$cli_root"
-  dart compile exe bin/main.dart -o "$build_dir/bin/linkedin"
+  dart compile exe bin/main.dart -o "$build_dir/bin/post-publisher"
 )
 
 if [[ -d "$cli_root/assets" ]]; then
@@ -20,4 +20,4 @@ if [[ -d "$cli_root/assets" ]]; then
 fi
 
 echo '>>> Build complete.'
-echo "    Binary: $build_dir/bin/linkedin"
+echo "    Binary: $build_dir/bin/post-publisher"

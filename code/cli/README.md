@@ -1,4 +1,4 @@
-# LinkedIn CLI
+# Post Publisher CLI
 
 Publish to LinkedIn from the command line.
 
@@ -27,11 +27,11 @@ The expected setup is:
 1. Create a LinkedIn Developer application.
 2. Enable the products you need.
 3. Configure your own `client id`, `client secret`, and `redirect uri`.
-4. Run `linkedin auth configure`.
-5. Run `linkedin auth login`.
-6. Run `linkedin post text --message "Hello from LinkedIn CLI"`.
-7. Optionally run `linkedin post image --file ./hello.png --message "Hello, LinkedIn!"`.
-8. Optionally run `linkedin post document --file ./hello.pdf --message "Hello, LinkedIn!"`.
+4. Run `post-publisher auth configure`.
+5. Run `post-publisher auth login`.
+6. Run `post-publisher post text --message "Hello from Post Publisher CLI"`.
+7. Optionally run `post-publisher post image --file ./hello.png --message "Hello, LinkedIn!"`.
+8. Optionally run `post-publisher post document --file ./hello.pdf --message "Hello, LinkedIn!"`.
 
 The CLI does not embed secrets and does not assume shared credentials.
 
@@ -62,28 +62,28 @@ Project-level defaults live in:
 Create that file with:
 
 ```bash
-linkedin init
+post-publisher init
 ```
 
 ## Commands
 
 | Command | Purpose |
 |---|---|
-| `linkedin` | Show status and quick-start guidance |
-| `linkedin help` | Show the command summary |
-| `linkedin init` | Create project-level defaults in `.post_publisher/config.json` |
-| `linkedin version` | Print the current CLI version |
-| `linkedin doctor` | Verify the local setup for auth and posting |
-| `linkedin upgrade` | Download and install the latest release |
-| `linkedin uninstall` | Remove the CLI from the system |
-| `linkedin auth configure` | Save LinkedIn app credentials locally |
-| `linkedin auth login` | Run the LinkedIn OAuth flow |
-| `linkedin auth signin` | Alias for `auth login` |
-| `linkedin auth status` | Show the cached auth status |
-| `linkedin auth logout` | Remove the cached token |
-| `linkedin post text --message ...` | Publish a text post |
-| `linkedin post image --file ... --message ...` | Publish an image post |
-| `linkedin post document --file ... --message ...` | Publish a PDF document post |
+| `post-publisher` | Show status and quick-start guidance |
+| `post-publisher help` | Show the command summary |
+| `post-publisher init` | Create project-level defaults in `.post_publisher/config.json` |
+| `post-publisher version` | Print the current CLI version |
+| `post-publisher doctor` | Verify the local setup for auth and posting |
+| `post-publisher upgrade` | Download and install the latest release |
+| `post-publisher uninstall` | Remove the CLI from the system |
+| `post-publisher auth configure` | Save LinkedIn app credentials locally |
+| `post-publisher auth login` | Run the LinkedIn OAuth flow |
+| `post-publisher auth signin` | Alias for `auth login` |
+| `post-publisher auth status` | Show the cached auth status |
+| `post-publisher auth logout` | Remove the cached token |
+| `post-publisher post text --message ...` | Publish a text post |
+| `post-publisher post image --file ... --message ...` | Publish an image post |
+| `post-publisher post document --file ... --message ...` | Publish a PDF document post |
 
 ## Quick start from source
 
@@ -108,7 +108,7 @@ dart run bin/main.dart help
 Example:
 
 ```bash
-linkedin auth configure \
+post-publisher auth configure \
   --client-id "YOUR_CLIENT_ID" \
   --client-secret "YOUR_CLIENT_SECRET" \
   --redirect-uri "http://127.0.0.1:8787/callback" \
@@ -128,13 +128,13 @@ You can also provide the same values through environment variables:
 Standard flow:
 
 ```bash
-linkedin auth login
+post-publisher auth login
 ```
 
 Manual fallback:
 
 ```bash
-linkedin auth login --manual
+post-publisher auth login --manual
 ```
 
 If the CLI cannot capture the loopback redirect automatically, it falls back to asking you to paste the full redirect URL.
@@ -144,13 +144,13 @@ If the CLI cannot capture the loopback redirect automatically, it falls back to 
 Publish as your personal profile:
 
 ```bash
-linkedin post text --message "Hello from my open-source LinkedIn CLI"
+post-publisher post text --message "Hello from my open-source Post Publisher CLI"
 ```
 
 Publish as an organization:
 
 ```bash
-linkedin post text \
+post-publisher post text \
   --organization "urn:li:organization:123456" \
   --message "Posting on behalf of my organization"
 ```
@@ -158,7 +158,7 @@ linkedin post text \
 Publish an image from a local file:
 
 ```bash
-linkedin post image \
+post-publisher post image \
   --file ./hello.png \
   --message "Hello, LinkedIn!" \
   --alt-text "Simple greeting image"
@@ -167,7 +167,7 @@ linkedin post image \
 Publish a PDF document:
 
 ```bash
-linkedin post document \
+post-publisher post document \
   --file ./hello.pdf \
   --title "hello.pdf" \
   --message "Hello, LinkedIn!"

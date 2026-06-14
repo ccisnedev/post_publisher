@@ -59,7 +59,7 @@ class DoctorOutput extends Output {
 
   @override
   String? toText() {
-    final buffer = StringBuffer('Checking LinkedIn CLI setup...\n');
+    final buffer = StringBuffer('Checking Post Publisher setup...\n');
     for (final check in checks) {
       final icon = check.passed ? '✓' : '✗';
       buffer.write('  $icon ${check.name}');
@@ -96,7 +96,7 @@ class DoctorCommand implements Command<DoctorInput, DoctorOutput> {
   @override
   Future<DoctorOutput> execute() async {
     final checks = <DoctorCheck>[
-      DoctorCheck(name: 'linkedin', passed: true, details: linkedinCliVersion),
+      DoctorCheck(name: 'post-publisher', passed: true, details: linkedinCliVersion),
     ];
 
     checks.add(await _checkCommand('dart', ['--version']));
@@ -107,14 +107,14 @@ class DoctorCommand implements Command<DoctorInput, DoctorOutput> {
       DoctorCheck(
         name: 'client id',
         passed: config.clientId?.isNotEmpty ?? false,
-        remediation: "Run 'linkedin auth configure --client-id <id>'",
+        remediation: "Run 'post-publisher auth configure --client-id <id>'",
       ),
     );
     checks.add(
       DoctorCheck(
         name: 'client secret',
         passed: config.clientSecret?.isNotEmpty ?? false,
-        remediation: "Run 'linkedin auth configure --client-secret <secret>'",
+        remediation: "Run 'post-publisher auth configure --client-secret <secret>'",
       ),
     );
     checks.add(
@@ -122,7 +122,7 @@ class DoctorCommand implements Command<DoctorInput, DoctorOutput> {
         name: 'redirect uri',
         passed: config.redirectUri?.isNotEmpty ?? false,
         details: config.redirectUri,
-        remediation: "Run 'linkedin auth configure --redirect-uri <uri>'",
+        remediation: "Run 'post-publisher auth configure --redirect-uri <uri>'",
       ),
     );
 
@@ -133,7 +133,7 @@ class DoctorCommand implements Command<DoctorInput, DoctorOutput> {
         name: 'required scopes',
         passed: requiredScopes.every(scopeSet.contains),
         details: config.scopes.join(' '),
-        remediation: "Run 'linkedin auth configure' and keep openid, profile, and w_member_social",
+        remediation: "Run 'post-publisher auth configure' and keep openid, profile, and w_member_social",
       ),
     );
 
@@ -145,7 +145,7 @@ class DoctorCommand implements Command<DoctorInput, DoctorOutput> {
         details: token == null
             ? null
             : (token.isExpired ? 'expired' : 'valid until ${token.expiresAt.toUtc()}'),
-        remediation: "Run 'linkedin auth login'",
+        remediation: "Run 'post-publisher auth login'",
       ),
     );
 
@@ -155,7 +155,7 @@ class DoctorCommand implements Command<DoctorInput, DoctorOutput> {
         name: 'member profile',
         passed: profile != null,
         details: profile?.personUrn,
-        remediation: "Run 'linkedin auth login' to resolve your member URN",
+        remediation: "Run 'post-publisher auth login' to resolve your member URN",
       ),
     );
 
