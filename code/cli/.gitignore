@@ -1,0 +1,5 @@
+.dart_tool/
+build/
+*.exe
+*.zip
+*.tar.gz

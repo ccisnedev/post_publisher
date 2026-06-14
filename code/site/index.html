@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post Publisher</title>
+  <meta name="description" content="Post Publisher is a CLI for authenticating with LinkedIn and publishing text, image, and document posts from the terminal.">
+  <meta name="theme-color" content="#b5472f">
+
+  <meta property="og:title" content="Post Publisher">
+  <meta property="og:description" content="CLI for authenticating with LinkedIn and publishing text, image, and document posts from the terminal.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://post-publisher.ccisne.dev/">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Post Publisher">
+  <meta name="twitter:description" content="CLI for authenticating with LinkedIn and publishing text, image, and document posts from the terminal.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <div class="shell">
+    <div class="topbar">
+      <div class="brandline">
+        <span class="brandmark"></span>
+        <span>Post Publisher</span>
+      </div>
+      <nav class="topnav">
+        <a href="/privacy/publisher/">Privacy</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+
+    <section class="hero">
+      <div class="panel hero-copy">
+        <div class="eyebrow">LinkedIn Publishing CLI</div>
+        <h1>Ship posts from the terminal without babysitting a browser tab.</h1>
+        <p class="lede">
+          Post Publisher is a command-line workflow for authenticating with LinkedIn and publishing
+          text, image, and document posts with one consistent interface. The goal is simple: make a
+          real post flow testable, scriptable, and repeatable.
+        </p>
+        <div class="cta-row">
+          <a class="button button--primary" href="/privacy/publisher/">Read privacy policy</a>
+          <a class="button button--secondary" href="/contact/">Contact</a>
+        </div>
+      </div>
+
+      <aside class="panel hero-card">
+        <h2>Current scope</h2>
+        <span class="badge">MVP in progress</span>
+        <ul class="meta-list">
+          <li>OAuth member login with loopback callback support</li>
+          <li>Text publishing for personal LinkedIn posts</li>
+          <li>Image and PDF upload flows from local files</li>
+          <li>Smoke-test script for end-to-end verification</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="panel section section--wide section--accent">
+      <div class="section-title">
+        <div>
+          <div class="kicker">What this site is for</div>
+          <h2>Public product identity for the LinkedIn app</h2>
+        </div>
+      </div>
+      <p>
+        This site exists so the LinkedIn Developer App for Post Publisher has a clear, public home,
+        a reachable privacy policy, and a contact route. It is not trying to be a marketing site
+        yet. Its job right now is trust, documentation, and compliance.
+      </p>
+    </section>
+
+    <section class="grid">
+      <article class="panel card">
+        <h3>CLI package</h3>
+        <p>The technical package name is <code>post_publisher</code>. The public app name is Post Publisher.</p>
+      </article>
+      <article class="panel card">
+        <h3>Auth model</h3>
+        <p>Uses 3-legged OAuth with OpenID Connect, profile, email, and member social posting scopes.</p>
+      </article>
+      <article class="panel card">
+        <h3>Validation path</h3>
+        <p>The first production milestone is a green post of <code>Hello, LinkedIn!</code> from the CLI.</p>
+      </article>
+    </section>
+
+    <section class="panel section">
+      <div class="section-title">
+        <div>
+          <div class="kicker">Near-term flow</div>
+          <h2>What gets verified first</h2>
+        </div>
+      </div>
+      <ol class="steps">
+        <li>Configure the LinkedIn app with the correct redirect URI and scopes.</li>
+        <li>Authenticate a real member account with the CLI.</li>
+        <li>Publish a text post with <code>Hello, LinkedIn!</code>.</li>
+        <li>Repeat with image and PDF uploads.</li>
+      </ol>
+    </section>
+
+    <footer class="footer">
+      <span>Post Publisher public site</span>
+      <span><a href="/privacy/publisher/">Privacy Policy</a></span>
+      <span><a href="/contact/">Contact</a></span>
+    </footer>
+  </div>
+</body>
+</html>
