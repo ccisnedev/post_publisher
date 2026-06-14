@@ -142,10 +142,10 @@ que el sitio quede inaccesible mientras propaga.
 
 ## Paso 10. Probar publicacion con documento
 
-- [ ] Ejecutar dart run bin/main.dart post document --file <ruta_pdf> --title "hello-linkedin.pdf" --message "Hello, LinkedIn!"
-- [ ] Confirmar que el upload del documento termina bien
-- [ ] Confirmar que LinkedIn crea el post final
-- [ ] Verificar visualmente en LinkedIn que el documento se muestra correctamente
+- [x] Ejecutar dart run bin/main.dart post document --file <ruta_pdf> --title "hello-linkedin.pdf" --message "Hello, LinkedIn!"
+- [x] Confirmar que el upload del documento termina bien
+- [x] Confirmar que LinkedIn crea el post final (urn:li:ugcPost:7471812188781871104)
+- [x] Verificar visualmente en LinkedIn que el documento se muestra correctamente
 
 ## Paso 11. Ejecutar el smoke test completo
 
