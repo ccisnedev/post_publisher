@@ -104,33 +104,33 @@ que el sitio quede inaccesible mientras propaga.
 
 ## Paso 6. Configurar el CLI local
 
-- [ ] Abrir terminal en code/cli
-- [ ] Ejecutar dart run bin/main.dart auth configure
-- [ ] Introducir el Client ID de la app
-- [ ] Introducir el Client Secret de la app
-- [ ] Introducir http://127.0.0.1:8787/callback como Redirect URI
-- [ ] Introducir openid profile email w_member_social como scopes
-- [ ] Introducir 202506 como API version
-- [ ] Ejecutar dart run bin/main.dart auth status
-- [ ] Ejecutar dart run bin/main.dart doctor
-- [ ] Confirmar que ya no faltan client id, client secret y redirect uri
+- [x] Abrir terminal en code/cli
+- [x] Ejecutar dart run bin/main.dart auth configure
+- [x] Introducir el Client ID de la app
+- [x] Introducir el Client Secret de la app
+- [x] Introducir http://127.0.0.1:8787/callback como Redirect URI
+- [x] Introducir openid profile email w_member_social como scopes
+- [x] Introducir 202506 como API version
+- [x] Ejecutar dart run bin/main.dart auth status
+- [x] Ejecutar dart run bin/main.dart doctor
+- [x] Confirmar que ya no faltan client id, client secret y redirect uri
 
 ## Paso 7. Hacer login real con OAuth
 
-- [ ] Ejecutar dart run bin/main.dart auth login
-- [ ] Completar el consentimiento en el navegador
-- [ ] Confirmar que el callback loopback vuelve al CLI sin timeout
+- [x] Ejecutar dart run bin/main.dart auth login
+- [x] Completar el consentimiento en el navegador
+- [x] Confirmar que el callback loopback vuelve al CLI sin timeout
 - [ ] Si falla el callback local, ejecutar dart run bin/main.dart auth login --manual
-- [ ] Ejecutar dart run bin/main.dart auth status
-- [ ] Confirmar que el token quedo guardado
-- [ ] Confirmar que el member profile quedo resuelto
+- [x] Ejecutar dart run bin/main.dart auth status
+- [x] Confirmar que el token quedo guardado
+- [x] Confirmar que el member profile quedo resuelto (urn:li:person:KR3Gq8KnrC)
 
 ## Paso 8. Probar la primera publicacion de texto
 
-- [ ] Ejecutar dart run bin/main.dart post text --message "Hello, LinkedIn!"
-- [ ] Confirmar que el CLI devuelve exito
-- [ ] Guardar la URL del post creado
-- [ ] Verificar visualmente en LinkedIn que el post existe
+- [x] Ejecutar dart run bin/main.dart post text --message "Hello, LinkedIn!"
+- [x] Confirmar que el CLI devuelve exito
+- [x] Guardar la URL del post creado (urn:li:share:7471809902756417537)
+- [x] Verificar visualmente en LinkedIn que el post existe
 
 ## Paso 9. Probar publicacion con imagen
 
