@@ -5,7 +5,13 @@ import 'dart:io';
 Future<bool> openExternalUrl(String url) async {
   try {
     if (Platform.isWindows) {
-      final result = await Process.run('cmd', ['/c', 'start', '', url]);
+      // Use rundll32 instead of `cmd /c start` because the URL contains `&`
+      // (OAuth query separators) and cmd.exe would treat them as command
+      // separators. rundll32 receives the URL as a single argument.
+      final result = await Process.run(
+        'rundll32',
+        ['url.dll,FileProtocolHandler', url],
+      );
       return result.exitCode == 0;
     }
 

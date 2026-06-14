@@ -160,6 +160,16 @@ Esta fase amplia el CLI para publicar como organizacion (no solo como persona).
 No empezar hasta que la Fase 1 (perfil personal) este validada de extremo a
 extremo, porque reutiliza el mismo flujo de auth, post y media.
 
+BLOQUEADO (2026-06-14): activar Community Management API exige un correo
+institucional del que no se dispone, y ademas obliga a que sea el unico producto
+de la app (no convive con Sign in / Share). Se creo la app Post Publisher Org
+pero no se pudo provisionar el producto. Decision: el objetivo se cubre por otra
+via que NO requiere w_organization_social: publicar en el perfil personal y luego
+recompartir esa publicacion desde cada Page del proyecto (mayor visibilidad
+personal). La Fase 2 con posteo nativo como organizacion queda en pausa hasta
+tener correo institucional. La estrategia de recompartir manual se documenta en
+la Fase 1 ampliada; automatizar el reshare es un posible trabajo futuro.
+
 ### Diseno tecnico de la Fase 2
 
 - El autor de un post es un URN. Para perfil es `urn:li:person:{id}` y para
