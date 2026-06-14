@@ -34,13 +34,15 @@ LinkedIn con aprobacion.
 
 ## Paso 1. Crear o confirmar la LinkedIn Page del producto
 
-- [ ] Entrar en LinkedIn con la cuenta propietaria
-- [ ] Crear la LinkedIn Page llamada Post Publisher si todavia no existe
-- [ ] Si ya existe una page adecuada, confirmar que el nombre visible es Post Publisher
+- [x] Entrar en LinkedIn con la cuenta propietaria
+- [x] Crear la LinkedIn Page llamada Post Publisher (id publico post-publisher-cli, organization id 129763971)
+- [x] Confirmar que el nombre visible es Post Publisher
 - [ ] Añadir descripcion corta del producto
 - [ ] Añadir logo cuadrado del producto
-- [ ] Publicar la page
-- [ ] Confirmar que la cuenta con la que haras las pruebas tiene permisos de admin sobre esa page
+- [x] Publicar la page
+- [x] Confirmar que la cuenta con la que haras las pruebas tiene permisos de admin sobre esa page
+
+URN de la organizacion para la Fase 2: urn:li:organization:129763971
 
 ## Paso 2. Publicar la web minima del producto
 
@@ -52,9 +54,9 @@ LinkedIn con aprobacion.
 - [x] Crear el repo publico ccisnedev/post_publisher y hacer push a main
 - [x] Habilitar Pages con Source = GitHub Actions
 - [x] Confirmar que el deploy quedo verde y el sitio carga en https://ccisnedev.github.io/post_publisher/
-- [ ] Configurar el DNS del Paso 3 antes de fijar el custom domain
-- [ ] Fijar post-publisher.ccisne.dev como Custom domain (despues del DNS)
-- [ ] Guardar el custom domain
+- [x] Configurar el DNS del Paso 3 antes de fijar el custom domain
+- [x] Fijar post-publisher.ccisne.dev como Custom domain (despues del DNS)
+- [x] Guardar el custom domain
 
 Nota: con despliegue por GitHub Actions el dominio custom se fija en los
 ajustes de Pages (campo cname), no por el archivo CNAME del artefacto. Por eso
@@ -63,15 +65,15 @@ que el sitio quede inaccesible mientras propaga.
 
 ## Paso 3. Configurar DNS del subdominio
 
-- [ ] Ir al proveedor DNS de ccisne.dev
-- [ ] Crear un registro CNAME para post-publisher
-- [ ] Apuntar ese CNAME a ccisnedev.github.io
-- [ ] Esperar la propagacion DNS
-- [ ] Volver a GitHub Pages
-- [ ] Activar Enforce HTTPS cuando aparezca disponible
-- [ ] Verificar que abre https://post-publisher.ccisne.dev
-- [ ] Verificar que abre https://post-publisher.ccisne.dev/privacy/publisher
-- [ ] Verificar que abre https://post-publisher.ccisne.dev/contact
+- [x] Ir al proveedor DNS de ccisne.dev
+- [x] Crear un registro CNAME para post-publisher
+- [x] Apuntar ese CNAME a ccisnedev.github.io
+- [x] Esperar la propagacion DNS
+- [x] Volver a GitHub Pages
+- [x] Activar Enforce HTTPS cuando aparezca disponible
+- [x] Verificar que abre https://post-publisher.ccisne.dev
+- [x] Verificar que abre https://post-publisher.ccisne.dev/privacy/publisher
+- [x] Verificar que abre https://post-publisher.ccisne.dev/contact
 
 ## Paso 4. Dejar la LinkedIn App completa y consistente
 
