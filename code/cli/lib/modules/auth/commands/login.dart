@@ -79,7 +79,7 @@ class AuthLoginCommand implements Command<AuthLoginInput, AuthLoginOutput> {
     if (!config.isConfigured) {
       return AuthLoginOutput(
         success: false,
-        message: "LinkedIn credentials are not configured yet. Run 'linkedin auth configure' first.",
+        message: "LinkedIn credentials are not configured yet. Run 'post-publisher auth configure' first.",
       );
     }
 
@@ -185,8 +185,8 @@ class AuthLoginCommand implements Command<AuthLoginInput, AuthLoginOutput> {
       request.response.headers.contentType = ContentType.html;
       request.response.write(
         response.error == null
-            ? '<html><body><h1>LinkedIn CLI</h1><p>You can return to the terminal.</p></body></html>'
-            : '<html><body><h1>LinkedIn CLI</h1><p>Authorization failed. Return to the terminal.</p></body></html>',
+            ? '<html><body><h1>Post Publisher</h1><p>You can return to the terminal.</p></body></html>'
+            : '<html><body><h1>Post Publisher</h1><p>Authorization failed. Return to the terminal.</p></body></html>',
       );
       await request.response.close();
 

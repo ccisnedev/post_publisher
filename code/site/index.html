@@ -91,13 +91,14 @@
         (enable <em>Sign in with LinkedIn using OpenID Connect</em> and <em>Share on LinkedIn</em>),
         then point the CLI at it:
       </p>
-      <pre class="cmd"><code>linkedin auth configure
-linkedin auth login
-linkedin post text --message "Hello, LinkedIn!"</code></pre>
+      <pre class="cmd"><code>post-publisher auth configure
+post-publisher auth login
+post-publisher post text --message "Hello, LinkedIn!"</code></pre>
       <p>
         Publish images and PDFs the same way with <code>post image</code> and
-        <code>post document</code>. After signing in once, posting is fully scriptable until the
-        token expires (~60 days), then you sign in again.
+        <code>post document</code>. The command is <code>post-publisher</code>, with
+        <code>pp</code> as a short alias. After signing in once, posting is fully scriptable
+        until the token expires (~60 days), then you sign in again.
       </p>
     </section>
 

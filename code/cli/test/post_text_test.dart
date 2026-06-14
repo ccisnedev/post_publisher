@@ -41,7 +41,7 @@ void main() {
       ).execute();
 
       expect(output.success, isFalse);
-      expect(output.message, contains('linkedin auth login'));
+      expect(output.message, contains('post-publisher auth login'));
     } finally {
       tempDir.deleteSync(recursive: true);
     }

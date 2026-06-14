@@ -22,7 +22,7 @@ void main() {
       ).execute();
 
       expect(output.success, isFalse);
-      expect(output.message, contains('linkedin auth configure'));
+      expect(output.message, contains('post-publisher auth configure'));
     } finally {
       tempDir.deleteSync(recursive: true);
     }

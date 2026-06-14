@@ -77,7 +77,7 @@ class UpgradeCommand implements Command<UpgradeInput, UpgradeOutput> {
         Uri.parse('https://api.github.com/repos/$_defaultRepo/releases/latest'),
       );
       request.headers.set('Accept', 'application/vnd.github+json');
-      request.headers.set('User-Agent', 'linkedin-cli/$linkedinCliVersion');
+      request.headers.set('User-Agent', 'post-publisher/$linkedinCliVersion');
 
       final response = await request.close();
       if (response.statusCode != 200) {
@@ -119,11 +119,11 @@ class UpgradeCommand implements Command<UpgradeInput, UpgradeOutput> {
       }
 
       final downloadUrl = asset.first['browser_download_url'] as String;
-      final tempDir = Directory.systemTemp.createTempSync('linkedin_upgrade_');
+      final tempDir = Directory.systemTemp.createTempSync('post_publisher_upgrade_');
       final archiveFile = File(p.join(tempDir.path, platformOps.assetName));
 
       final downloadRequest = await client.getUrl(Uri.parse(downloadUrl));
-      downloadRequest.headers.set('User-Agent', 'linkedin-cli/$linkedinCliVersion');
+      downloadRequest.headers.set('User-Agent', 'post-publisher/$linkedinCliVersion');
       final downloadResponse = await downloadRequest.close();
       final sink = archiveFile.openWrite();
       await downloadResponse.pipe(sink);

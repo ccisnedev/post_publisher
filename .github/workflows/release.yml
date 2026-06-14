@@ -47,9 +47,9 @@ jobs:
       matrix:
         include:
           - os: windows-latest
-            asset: linkedin-windows-x64.zip
+            asset: post-publisher-windows-x64.zip
           - os: ubuntu-latest
-            asset: linkedin-linux-x64.tar.gz
+            asset: post-publisher-linux-x64.tar.gz
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4

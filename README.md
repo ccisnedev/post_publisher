@@ -52,17 +52,19 @@ Post Publisher ships no shared secrets. Create your own LinkedIn Developer app
 then point the CLI at it:
 
 ```bash
-linkedin auth configure   # store your client id, secret, redirect URI
-linkedin auth login       # sign in once through the browser
-linkedin post text --message "Hello, LinkedIn!"
+post-publisher auth configure   # store your client id, secret, redirect URI
+post-publisher auth login       # sign in once through the browser
+post-publisher post text --message "Hello, LinkedIn!"
 ```
 
 Publish media the same way:
 
 ```bash
-linkedin post image --file ./photo.png --message "..." --alt-text "..."
-linkedin post document --file ./deck.pdf --title "deck.pdf" --message "..."
+post-publisher post image --file ./photo.png --message "..." --alt-text "..."
+post-publisher post document --file ./deck.pdf --title "deck.pdf" --message "..."
 ```
+
+`pp` is a short alias for `post-publisher`, e.g. `pp post text --message "..."`.
 
 After signing in, posting is fully scriptable until the token expires
 (~60 days), then you sign in again.

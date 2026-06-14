@@ -80,7 +80,7 @@ posting is wired but unused — see Scope.)
   - Linux: `~/.config/post_publisher/config.json`
   - macOS: `~/Library/Application Support/post_publisher/config.json`
 - Project-level defaults live in `.post_publisher/config.json`, created by
-  `linkedin init`.
+  `post-publisher init`.
 
 Because user config is separate from the install directory, installing,
 upgrading, or uninstalling the binary never touches your saved credentials.
@@ -88,8 +88,9 @@ upgrading, or uninstalling the binary never touches your saved credentials.
 ## Distribution
 
 - `release.yml` compiles the binary on Windows and Linux runners, packages it as
-  `linkedin-windows-x64.zip` / `linkedin-linux-x64.tar.gz` (each containing
-  `bin/<binary>` and `assets/`), and publishes a GitHub Release `v<version>`
+  `post-publisher-windows-x64.zip` / `post-publisher-linux-x64.tar.gz` (each
+  containing `bin/<binary>` and `assets/`), and publishes a GitHub Release
+  `v<version>`
   whenever `version.dart` is bumped on `main`.
 - `pages.yml` deploys `code/site` and bundles `install.ps1` / `install.sh` so
   they are served from the product domain.

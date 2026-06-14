@@ -55,7 +55,7 @@ class UninstallCommand implements Command<UninstallInput, UninstallOutput> {
     await platformOps.scheduleDeletion(input.installDir);
 
     return UninstallOutput(
-      message: 'LinkedIn CLI uninstalled. Restart your terminal to refresh PATH.',
+      message: 'Post Publisher uninstalled. Restart your terminal to refresh PATH.',
     );
   }
 

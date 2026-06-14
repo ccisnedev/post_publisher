@@ -61,23 +61,23 @@ class InitCommand implements Command<InitInput, InitOutput> {
     const localEntry = '.post_publisher/local.json';
     if (!gitignore.existsSync()) {
       gitignore.writeAsStringSync(
-        '# LinkedIn CLI local overrides\n$localEntry\n',
+        '# Post Publisher local overrides\n$localEntry\n',
       );
-      steps.add('Created .gitignore with LinkedIn CLI entry');
+      steps.add('Created .gitignore with Post Publisher entry');
     } else {
       var content = gitignore.readAsStringSync();
       if (!content.contains(localEntry)) {
         if (!content.endsWith('\n')) {
           content = '$content\n';
         }
-        gitignore.writeAsStringSync('$content# LinkedIn CLI local overrides\n$localEntry\n');
-        steps.add('Added LinkedIn CLI local override to .gitignore');
+        gitignore.writeAsStringSync('$content# Post Publisher local overrides\n$localEntry\n');
+        steps.add('Added Post Publisher local override to .gitignore');
       }
     }
 
     if (steps.isEmpty) {
       return InitOutput(
-        message: 'LinkedIn CLI is already initialized in ${_store.projectRoot}',
+        message: 'Post Publisher is already initialized in ${_store.projectRoot}',
         created: false,
       );
     }

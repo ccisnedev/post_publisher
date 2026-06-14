@@ -9,8 +9,8 @@ if (Test-Path $buildDir) {
 
 New-Item -ItemType Directory -Force -Path (Join-Path $buildDir 'bin') | Out-Null
 
-Write-Host '>>> Compiling linkedin.exe...'
-$binOutput = Join-Path (Join-Path $buildDir 'bin') 'linkedin.exe'
+Write-Host '>>> Compiling post-publisher.exe...'
+$binOutput = Join-Path (Join-Path $buildDir 'bin') 'post-publisher.exe'
 Push-Location $cliRoot
 dart compile exe bin/main.dart -o $binOutput
 Pop-Location

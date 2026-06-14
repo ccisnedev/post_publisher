@@ -6,10 +6,10 @@ import 'platform_ops.dart';
 
 class LinuxPlatformOps implements PlatformOps {
   @override
-  String get binaryName => 'linkedin';
+  String get binaryName => 'post-publisher';
 
   @override
-  String get assetName => 'linkedin-linux-x64.tar.gz';
+  String get assetName => 'post-publisher-linux-x64.tar.gz';
 
   @override
   Future<void> expandArchive(String archivePath, String destDir) async {
