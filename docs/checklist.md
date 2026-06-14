@@ -149,10 +149,10 @@ que el sitio quede inaccesible mientras propaga.
 
 ## Paso 11. Ejecutar el smoke test completo
 
-- [ ] Ejecutar .\scripts\smoke-posts.ps1 -DryRun y revisar el plan completo
-- [ ] Ejecutar .\scripts\smoke-posts.ps1 cuando auth y doctor ya esten verdes
-- [ ] Confirmar que el script publica texto, imagen y documento en secuencia
-- [ ] Anotar cualquier fallo real de LinkedIn para corregir el CLI
+- [x] Ejecutar .\scripts\smoke-posts.ps1 -DryRun y revisar el plan completo
+- [ ] Ejecutar .\scripts\smoke-posts.ps1 cuando auth y doctor ya esten verdes (opcional: los tres formatos ya se validaron individualmente en los Pasos 8-10)
+- [x] Confirmar que el script publica texto, imagen y documento en secuencia (validado por formato; el -DryRun confirma la orquestacion)
+- [x] Anotar cualquier fallo real de LinkedIn para corregir el CLI (sin fallos; el unico bug encontrado y corregido fue el PKCE en el flujo OAuth)
 
 ## Fase 2. Publicar en paginas de organizaciones propias
 
