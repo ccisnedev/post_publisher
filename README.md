@@ -20,6 +20,7 @@ code/
 docs/
   adr/      # Architecture Decision Records
   architecture.md
+  roadmap.md
 .github/
   workflows/
     pages.yml     # Deploy code/site to GitHub Pages + serve the installers
