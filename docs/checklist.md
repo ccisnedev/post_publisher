@@ -49,11 +49,17 @@ LinkedIn con aprobacion.
 - [x] Crear la pagina de contacto en code/site/contact/index.html
 - [x] Crear el archivo CNAME con post-publisher.ccisne.dev
 - [x] Añadir el workflow de GitHub Pages
-- [ ] Hacer push a main para disparar el deploy de Pages
-- [ ] Entrar en GitHub Settings > Pages del repo
-- [ ] Confirmar que Source usa GitHub Actions
-- [ ] Escribir post-publisher.ccisne.dev en Custom domain
+- [x] Crear el repo publico ccisnedev/post_publisher y hacer push a main
+- [x] Habilitar Pages con Source = GitHub Actions
+- [x] Confirmar que el deploy quedo verde y el sitio carga en https://ccisnedev.github.io/post_publisher/
+- [ ] Configurar el DNS del Paso 3 antes de fijar el custom domain
+- [ ] Fijar post-publisher.ccisne.dev como Custom domain (despues del DNS)
 - [ ] Guardar el custom domain
+
+Nota: con despliegue por GitHub Actions el dominio custom se fija en los
+ajustes de Pages (campo cname), no por el archivo CNAME del artefacto. Por eso
+el custom domain se deja para despues de tener el DNS del Paso 3, y asi evitar
+que el sitio quede inaccesible mientras propaga.
 
 ## Paso 3. Configurar DNS del subdominio
 
