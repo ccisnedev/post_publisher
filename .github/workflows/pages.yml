@@ -6,6 +6,8 @@ on:
       - main
     paths:
       - 'code/site/**'
+      - 'code/cli/scripts/install.ps1'
+      - 'code/cli/scripts/install.sh'
       - '.github/workflows/pages.yml'
 
 permissions:
@@ -27,6 +29,11 @@ jobs:
       - uses: actions/checkout@v4
 
       - uses: actions/configure-pages@v5
+
+      - name: Bundle install scripts into the site
+        run: |
+          cp code/cli/scripts/install.ps1 code/site/install.ps1
+          cp code/cli/scripts/install.sh code/site/install.sh
 
       - uses: actions/upload-pages-artifact@v3
         with:

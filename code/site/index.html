@@ -40,25 +40,65 @@
         <h1>Ship posts from the terminal without babysitting a browser tab.</h1>
         <p class="lede">
           Post Publisher is a command-line workflow for authenticating with LinkedIn and publishing
-          text, image, and document posts with one consistent interface. The goal is simple: make a
-          real post flow testable, scriptable, and repeatable.
+          text, image, and document posts with one consistent interface. Bring your own LinkedIn app
+          credentials, sign in once, and make your posting flow scriptable and repeatable.
         </p>
         <div class="cta-row">
-          <a class="button button--primary" href="/privacy/publisher/">Read privacy policy</a>
-          <a class="button button--secondary" href="/contact/">Contact</a>
+          <a class="button button--primary" href="#install">Install the CLI</a>
+          <a class="button button--secondary" href="https://github.com/ccisnedev/post_publisher">View on GitHub</a>
         </div>
       </div>
 
       <aside class="panel hero-card">
         <h2>Current scope</h2>
-        <span class="badge">MVP in progress</span>
+        <span class="badge">v0.1.0 &middot; working</span>
         <ul class="meta-list">
           <li>OAuth member login with loopback callback support</li>
           <li>Text publishing for personal LinkedIn posts</li>
           <li>Image and PDF upload flows from local files</li>
-          <li>Smoke-test script for end-to-end verification</li>
+          <li>Open source, bring-your-own-credentials model</li>
         </ul>
       </aside>
+    </section>
+
+    <section class="panel section" id="install">
+      <div class="section-title">
+        <div>
+          <div class="kicker">Install</div>
+          <h2>Get the CLI in one line</h2>
+        </div>
+      </div>
+      <p>Windows (PowerShell):</p>
+      <pre class="cmd"><code>irm https://post-publisher.ccisne.dev/install.ps1 | iex</code></pre>
+      <p>Linux (bash):</p>
+      <pre class="cmd"><code>curl -fsSL https://post-publisher.ccisne.dev/install.sh | bash</code></pre>
+      <p>
+        The installer downloads the latest release binary from GitHub and adds it to your
+        PATH. You can read both scripts before running them:
+        <a href="/install.ps1">install.ps1</a> &middot; <a href="/install.sh">install.sh</a>.
+      </p>
+    </section>
+
+    <section class="panel section">
+      <div class="section-title">
+        <div>
+          <div class="kicker">Quick start</div>
+          <h2>Authenticate and publish</h2>
+        </div>
+      </div>
+      <p>
+        Post Publisher does not ship shared secrets. You create your own LinkedIn Developer app
+        (enable <em>Sign in with LinkedIn using OpenID Connect</em> and <em>Share on LinkedIn</em>),
+        then point the CLI at it:
+      </p>
+      <pre class="cmd"><code>linkedin auth configure
+linkedin auth login
+linkedin post text --message "Hello, LinkedIn!"</code></pre>
+      <p>
+        Publish images and PDFs the same way with <code>post image</code> and
+        <code>post document</code>. After signing in once, posting is fully scriptable until the
+        token expires (~60 days), then you sign in again.
+      </p>
     </section>
 
     <section class="panel section section--wide section--accent">
@@ -69,9 +109,9 @@
         </div>
       </div>
       <p>
-        This site exists so the LinkedIn Developer App for Post Publisher has a clear, public home,
-        a reachable privacy policy, and a contact route. It is not trying to be a marketing site
-        yet. Its job right now is trust, documentation, and compliance.
+        This site is the public home of the Post Publisher LinkedIn Developer App: a clear product
+        page, a reachable privacy policy, and a contact route. Its job is trust, documentation, and
+        compliance &mdash; not marketing.
       </p>
     </section>
 
@@ -85,28 +125,29 @@
         <p>Uses 3-legged OAuth with OpenID Connect, profile, email, and member social posting scopes.</p>
       </article>
       <article class="panel card">
-        <h3>Validation path</h3>
-        <p>The first production milestone is a green post of <code>Hello, LinkedIn!</code> from the CLI.</p>
+        <h3>Formats</h3>
+        <p>Publish text, images, and PDF documents &mdash; all validated end to end against the live LinkedIn API.</p>
       </article>
     </section>
 
     <section class="panel section">
       <div class="section-title">
         <div>
-          <div class="kicker">Near-term flow</div>
-          <h2>What gets verified first</h2>
+          <div class="kicker">How it works</div>
+          <h2>From install to published post</h2>
         </div>
       </div>
       <ol class="steps">
-        <li>Configure the LinkedIn app with the correct redirect URI and scopes.</li>
-        <li>Authenticate a real member account with the CLI.</li>
-        <li>Publish a text post with <code>Hello, LinkedIn!</code>.</li>
-        <li>Repeat with image and PDF uploads.</li>
+        <li>Install the CLI with the one-line command above.</li>
+        <li>Configure it with your own LinkedIn app's client ID, secret, and redirect URI.</li>
+        <li>Sign in once through the browser; the token is cached locally.</li>
+        <li>Publish text, image, or document posts &mdash; manually or from a script.</li>
       </ol>
     </section>
 
     <footer class="footer">
       <span>Post Publisher public site</span>
+      <span><a href="https://github.com/ccisnedev/post_publisher">GitHub</a></span>
       <span><a href="/privacy/publisher/">Privacy Policy</a></span>
       <span><a href="/contact/">Contact</a></span>
     </footer>

@@ -27,6 +27,10 @@ out/
 *.so
 *.dylib
 
+# Install scripts copied into the site at Pages deploy time
+code/site/install.ps1
+code/site/install.sh
+
 # Logs
 *.log
 npm-debug.log*

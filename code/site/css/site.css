@@ -50,6 +50,26 @@ code {
   border-radius: 6px;
 }
 
+pre.cmd {
+  margin: 12px 0 20px;
+  padding: 16px 18px;
+  background: #1f1b18;
+  color: #f4f0e8;
+  border-radius: 14px;
+  overflow-x: auto;
+  box-shadow: var(--shadow);
+}
+
+pre.cmd code {
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  white-space: pre;
+}
+
 .shell {
   max-width: 1120px;
   margin: 0 auto;
